@@ -1,9 +1,7 @@
-# PredGly
-PredGly uses a machine learning method to predit lysine glycation sites for homo sapiens. Users can run program with specified protein sequences.
 
-# Installation
-* Install [Python 2.7](https://www.python.org/downloads/) in Linux and Windows.
-* Because the program is written in Python 2.7, python 2.7 with the pip tool must be installed first. Glycation uses the following dependencies: numpy, pandas, matplotlib, scipy and scikit-learn. You can install these packages first, by the following commands:
+# Cài đặt
+* Cài đặt [Python 2.7] (https://www.python.org/downloads/) trên Linux và Windows.
+* Vì chương trình được viết bằng Python 2.7, nên trước tiên phải cài đặt python 2.7 với công cụ pip. Glycation sử dụng các phụ thuộc sau: numpy, pandas, matplotlib, scipy và scikit-learning. Trước tiên, bạn có thể cài đặt các gói này bằng các lệnh sau:
 ```
 pip install numpy
 pip install pandas
@@ -11,10 +9,10 @@ pip install matplotlib
 pip install scipy
 pip install scikit-learn
 ```
-* If you meet an error after inputting above commands in Linux, the specific contents are as follows:
-</br>Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: '/usr/local/lib/python2.7/dist-packages/sklearn'
-Consider using the '--user' option or check the permissions.
-</br>Users can change the commands into:
+* Nếu bạn gặp lỗi sau khi nhập các lệnh trên trong Linux, nội dung cụ thể như sau:
+</br> Unable to install packages due to Environment Error: [Errno 13] Permission denied: '/usr/local/lib/python2.7/dist-packages/sklearn'
+ sử dụng tùy chọn '--user' hoặc kiểm tra các quyền.
+</br> Người dùng có thể thay đổi các lệnh thành:
 ```
 pip install numpy --user
 pip install pandas --user
@@ -23,21 +21,21 @@ pip install scipy --user
 pip install scikit-learn --user
 ```
 
-# Running PredGly
-open cmd in Windows or terminal in Linux, then cd to the PredGly-master/codes folder which contains predict.py
-</br>**For general glycation site prediction using our model, run:**
-</br>`python predict.py -input [custom predicting data in txt format] -threshold [threshold value] -output [ predicting results in csv format]`  
-</br>**Example:**
-</br>`python predict.py -input ../codes/example.txt -threshold 0.5 -output ../codes/results.csv`
-</br>-output is optional parameter, while -input and -threshold are required parameters. Prediction results will show in the cmd or terminal, and if you don't want to save results, you need not input -output.
+Chạy PredGly
+mở cmd trong Windows hoặc Linux, sau đó chuyển vào thư mục PredGly-master / Code chứa predict.py
+</br> ** Đối với dự đoán vị trí glycation gõ lệnh : **
+</br> `python predict.py -input [custom predicting data in txt format] -threshold [threshold value] -output [ predicting results in csv format]`
+</br> ** Ví dụ: **
+</br> `python predict.py -input ../codes/example.txt -threshold 0.5 -output ../codes/results.csv`
+</br> -output là tham số tùy chọn, trong khi -input và -threshold là các tham số bắt buộc. Kết quả dự đoán sẽ hiển thị trong cmd hoặc terminal và nếu bạn không muốn lưu kết quả, bạn không cần input -output.
 
-</br>**Example:**
+</br>**Ví dụ:**
 </br>`python predict.py -input ../codes/example.txt -threshold 0.5`
 
-</br>**For details of -input,-threshold and -output, run:**
+</br>**Để biết chi tiết về -input, -threshold và -output, hãy chạy::**
 </br>`python predict.py -h`
 
-# Announcements
-* In order to obtain the prediction results, please save the query protein sequences and protein name in txt format. Users can refer to the example.txt under the codes folder. Also of note, each protein name should be added by '>', otherwise the program will occur error.
-* The accepted amino acids are: A, C, D, E, F, G, H, I, K, L, M, N, P, Q, R, S, T, V, W, Y, and a virtual amino acid O. If the protein fragments contain other amino acids, the program only will predict fragments which contain above-mentioned 21 amino acids. 
-* To save the prediction results, the -ouput should be in csv format.
+Thông báo
+* Để nhận được kết quả dự đoán, vui lòng lưu trình tự protein truy vấn và tên protein ở định dạng txt. Người dùng có thể tham khảo example.txt trong thư mục mã. Cũng cần lưu ý, mỗi tên protein nên được thêm vào bởi '>', nếu không chương trình sẽ xảy ra lỗi.
+* Các axit amin được chấp nhận là: A, C, D, E, F, G, H, I, K, L, M, N, P, Q, R, S, T, V, W, Y và ảo axit amin O. Nếu đoạn prôtêin chứa các axit amin khác, chương trình chỉ dự đoán các đoạn có chứa 21 axit amin nói trên.
+* Để lưu kết quả dự đoán,-đầu ra phải ở định dạng csv.
